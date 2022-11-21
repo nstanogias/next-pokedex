@@ -1,5 +1,5 @@
 import useSWRInfinite from 'swr/infinite';
-import { PageData } from '../types';
+import { PageData, Result } from '../types';
 
 const PAGE_SIZE = 16;
 
@@ -12,14 +12,14 @@ const getKey = (pageIndex: number, previousPageData: any) => {
 };
 
 const usePagination = () => {
-  const { data, error, size, setSize } = useSWRInfinite(getKey, {
+  const { data, error, size, setSize, mutate } = useSWRInfinite<PageData[]>(getKey, {
     revalidateIfStale: false,
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   });
 
-  const flattenedPokemonPages = data?.flatMap((page: PageData) => page?.results) ?? [];
-
+  console.log(data);
+  const flattenedPokemonPages: Result[] = data?.map((page: any) => page.results).flat() ?? [];
   const isLoadingMore = data && typeof data[size - 1] === 'undefined';
 
   const isReachedEnd = data && data[data.length - 1]?.length < PAGE_SIZE;
@@ -28,6 +28,7 @@ const usePagination = () => {
     data: flattenedPokemonPages,
     size,
     setSize,
+    mutate,
     error,
     isLoadingMore,
     isReachedEnd,

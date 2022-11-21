@@ -1,11 +1,15 @@
 export interface PageData {
   count: number;
-  next: string;
-  previous: string;
+  next: string | null;
+  previous: string | null;
   results: Result[];
 }
 
-export interface Result extends NameUrl {}
+export interface Result extends NameUrl {
+  isFake?: boolean;
+  imageUrl?: string;
+  types?: string;
+}
 
 export interface Ability {
   ability: NameUrl;

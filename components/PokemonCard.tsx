@@ -6,17 +6,16 @@ import { Pokemon } from '../types';
 
 interface Props {
   url: string;
-  index: number;
 }
 
-const PokemonCard: FC<Props> = ({ url, index }) => {
+const PokemonCard: FC<Props> = ({ url }) => {
   const { data: pokemonData, error } = useSWR<Pokemon>(url, {
     revalidateIfStale: false,
     revalidateOnFocus: false,
     revalidateOnReconnect: false,
   });
 
-  const pokeIndex = ('000' + index).slice(-3);
+  const pokeIndex = ('000' + pokemonData?.species.url.split('/').slice(-2, -1)[0]).slice(-3);
 
   if (error) return <h3>something went wrong while fetching pokemon data</h3>;
 
