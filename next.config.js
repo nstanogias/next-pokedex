@@ -2,6 +2,6 @@
 module.exports = {
   reactStrictMode: true,
   images: {
-    domains: ['assets.pokemon.com'],
+    domains: ['assets.pokemon.com', 'upload.wikimedia.org'],
   },
 };
