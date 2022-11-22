@@ -4,7 +4,10 @@ This is a [Pokedex](https://www.pokemon.com/us/pokedex/) clone project using [Po
 
 ## Screenshots
 
+Hope page
 ![Home page](assets/homePage.png)
+
+Pokemon page
 ![Pokemon page](assets/pokemonPage.png)
 
 ## Tech Stack
