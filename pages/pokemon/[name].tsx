@@ -37,7 +37,7 @@ const Pokemon: NextPage<Props> = ({ pokemonDetails, evolutionDetails, error }) =
           <div></div>
         </div>
 
-        <div className='flex mt-10 gap-x-10'>
+        <div className='flex flex-col mx-auto mt-10 sm:flex-row gap-y-10 sm:gap-x-10'>
           <Image
             src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokeIndex}.png`}
             alt={pokemonDetails.name}
@@ -45,7 +45,7 @@ const Pokemon: NextPage<Props> = ({ pokemonDetails, evolutionDetails, error }) =
             height={400}
             className='bg-[#F2F2F2] rounded-xl'
           />
-          <div className='bg-[#30A7D6] p-8 rounded-xl h-fit w-[400px]'>
+          <div className='bg-[#30A7D6] p-8 rounded-xl h-fit sm:w-[400px]'>
             <div className='flex justify-between'>
               <div className='flex flex-col'>
                 <label className='text-xl text-white'>Height</label>
@@ -83,7 +83,7 @@ const Pokemon: NextPage<Props> = ({ pokemonDetails, evolutionDetails, error }) =
             </div>
           </div>
         </div>
-        <div className='flex mt-12 gap-x-10'>
+        <div className='flex flex-col mt-12 sm:flex-row gap-x-10'>
           <div className='flex flex-col'>
             <h5 className='my-3 text-2xl font-bold'>Stats</h5>
             <div>
@@ -92,7 +92,7 @@ const Pokemon: NextPage<Props> = ({ pokemonDetails, evolutionDetails, error }) =
               ))}
             </div>
           </div>
-          <div className='flex flex-col'>
+          <div className='flex flex-col max-w-[300px] sm:max-w-[600px]'>
             <h5 className='my-3 text-2xl font-bold'>Evolutions</h5>
             <EvolutionDetails evolutionDetails={evolutionDetails} />
           </div>
