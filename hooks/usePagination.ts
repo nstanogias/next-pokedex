@@ -18,7 +18,7 @@ const usePagination = () => {
     revalidateOnReconnect: false,
   });
 
-  console.log(data);
+  // console.log(data);
   const flattenedPokemonPages: Result[] = data?.map((page: any) => page.results).flat() ?? [];
   const isLoadingMore = data && typeof data[size - 1] === 'undefined';
 
