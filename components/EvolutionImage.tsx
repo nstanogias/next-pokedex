@@ -11,7 +11,7 @@ const EvolutionImage: FC<Props> = ({ species }) => {
 
   return (
     <div className='flex flex-col items-center justify-center'>
-      <Link href={`/pokemon/${species.name}`} className='w-24 h-24 bg-gray-300 rounded-full'>
+      <Link href={`/pokemon/${species.name}`} className='w-16 h-16 bg-gray-300 rounded-full md:w-24 md:h-24'>
         <Image
           key={species.name}
           src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${pokeIndex}.png`}

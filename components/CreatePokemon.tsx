@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import usePagination from '../hooks/usePagination';
 
 const CreatePokemon = () => {
-  const [name, setName] = useState('');
-  const [imageUrl, setImageUrl] = useState('');
-  const [types, setTypes] = useState('');
+  const [name, setName] = useState<string>('');
+  const [imageUrl, setImageUrl] = useState<string>('');
+  const [types, setTypes] = useState<string>('');
 
   const { mutate: paginatedPokemonsMutate } = usePagination();
 
@@ -45,7 +45,7 @@ const CreatePokemon = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className='flex flex-col p-4 mx-auto mt-6 border border-blue-400 rounded-[8px] w-[400px]'
+      className='flex flex-col p-4 mx-auto mt-6 border border-blue-400 rounded-[8px] w-[300px] md:w-[400px]'
     >
       <label className='font-semibold'>Name:</label>
       <input
